@@ -7,3 +7,6 @@ plotly
 wordcloud
 scikit-learn
 joblib
+nltk
+openpyxl
+langdetect
