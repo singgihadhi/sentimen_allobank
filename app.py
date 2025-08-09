@@ -178,8 +178,8 @@ elif menu == "Prediksi Ulasan Baru":
 
     # --- Manual Input ---
     st.header("📝 Prediksi Ulasan Manual")
-    model_path = "hasil/model_svm.pkl"
-    vectorizer_path = "hasil/vectorizer_tfidf.pkl"
+    model_path = "model_svm.pkl"
+    vectorizer_path = "vectorizer_tfidf.pkl"
     if not os.path.exists(model_path) or not os.path.exists(vectorizer_path):
         st.warning("Model atau vectorizer belum ditemukan. Silakan jalankan training terlebih dahulu.")
     else:
@@ -196,3 +196,4 @@ elif menu == "Prediksi Ulasan Baru":
                 st.success("🎯 Prediksi Selesai")
                 st.markdown(f"- **Teks**: _{ulasan}_")
                 st.markdown(f"- **Hasil Sentimen**: <span style='color:{warna.get(hasil.lower(), 'black')}; font-weight:bold'>{hasil.upper()}</span>", unsafe_allow_html=True)
+
