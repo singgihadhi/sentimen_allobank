@@ -12,9 +12,22 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import joblib
 import os
 
-# Load CSS dari file lokal di repo
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# === CSS custom untuk warna pink ===
+st.markdown("""
+<style>
+body {
+    background-color: #fff0f5;
+}
+.stButton>button {
+    background-color: pink;
+    color: black;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # ---------- CONFIGURASI & LOADING ----------
 st.set_page_config("Analisis Setimen Aplikasi ALLO BANK", layout="wide")
 
@@ -199,5 +212,6 @@ elif menu == "Prediksi Ulasan Baru":
                 st.success("🎯 Prediksi Selesai")
                 st.markdown(f"- **Teks**: _{ulasan}_")
                 st.markdown(f"- **Hasil Sentimen**: <span style='color:{warna.get(hasil.lower(), 'black')}; font-weight:bold'>{hasil.upper()}</span>", unsafe_allow_html=True)
+
 
 
